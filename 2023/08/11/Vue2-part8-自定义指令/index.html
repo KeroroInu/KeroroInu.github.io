@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Vue2-part8-自定义指令 | Keroro's Blog</title><meta name="author" content="Keroro"><meta name="copyright" content="Keroro"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="Vue2-part8-自定义指令一、自定义指令1.指令介绍 内置指令：v-html、v-if、v-bind、v-on…这都是 Vue 内置的一些指令，可以直接使用 自定义指令：同时 Vue 也支持让开发者，自己注册一些指令。这些指令被称为自定义指令  2.自定义指令概念：自己定义的指令，可以封住一些 DOM 操作，扩展额外的功能 3.自定义指令语法 全局注册  1234567&#x2F;&#x2F; 在 main.j">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue2-part8-自定义指令">
+<meta property="og:url" content="http://example.com/2023/08/11/Vue2-part8-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4/index.html">
+<meta property="og:site_name" content="Keroro&#39;s Blog">
+<meta property="og:description" content="Vue2-part8-自定义指令一、自定义指令1.指令介绍 内置指令：v-html、v-if、v-bind、v-on…这都是 Vue 内置的一些指令，可以直接使用 自定义指令：同时 Vue 也支持让开发者，自己注册一些指令。这些指令被称为自定义指令  2.自定义指令概念：自己定义的指令，可以封住一些 DOM 操作，扩展额外的功能 3.自定义指令语法 全局注册  1234567&#x2F;&#x2F; 在 main.j">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/avatar.jpg">
+<meta property="article:published_time" content="2023-08-11T14:31:43.000Z">
+<meta property="article:modified_time" content="2023-08-11T14:34:49.436Z">
+<meta property="article:author" content="Keroro">
+<meta property="article:tag" content="Vue2">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/08/11/Vue2-part8-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Vue2-part8-自定义指令',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-11 22:34:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Keroro's Blog"><span class="site-name">Keroro's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Vue2-part8-自定义指令</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-11T14:31:43.000Z" title="发表于 2023-08-11 22:31:43">2023-08-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-11T14:34:49.436Z" title="更新于 2023-08-11 22:34:49">2023-08-11</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">515</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Vue2-part8-自定义指令"><a href="#Vue2-part8-自定义指令" class="headerlink" title="Vue2-part8-自定义指令"></a>Vue2-part8-自定义指令</h1><h3 id="一、自定义指令"><a href="#一、自定义指令" class="headerlink" title="一、自定义指令"></a>一、自定义指令</h3><h4 id="1-指令介绍"><a href="#1-指令介绍" class="headerlink" title="1.指令介绍"></a>1.指令介绍</h4><ul>
+<li>内置指令：<code>v-html</code>、<code>v-if</code>、<code>v-bind</code>、<code>v-on</code>…这都是 Vue 内置的一些指令，可以直接使用</li>
+<li>自定义指令：同时 Vue 也支持让开发者，自己注册一些指令。这些指令被称为<strong>自定义指令</strong></li>
+</ul>
+<h4 id="2-自定义指令"><a href="#2-自定义指令" class="headerlink" title="2.自定义指令"></a>2.自定义指令</h4><p>概念：自己定义的指令，可以<strong>封住一些 DOM 操作</strong>，扩展额外的功能</p>
+<h4 id="3-自定义指令语法"><a href="#3-自定义指令语法" class="headerlink" title="3.自定义指令语法"></a>3.自定义指令语法</h4><ul>
+<li>全局注册</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 main.js 中</span></span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">directive</span>(<span class="string">&#x27;指令名&#x27;</span>, &#123;</span><br><span class="line">  <span class="string">&quot;inserted&quot;</span> (el) &#123;</span><br><span class="line">    <span class="comment">// 可以对 el 标签，扩展额外功能</span></span><br><span class="line">    el.<span class="title function_">focus</span>()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>局部注册</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 Vue 组件的配置项中</span></span><br><span class="line"><span class="attr">directives</span>: &#123;</span><br><span class="line">  <span class="string">&quot;指令名&quot;</span>: &#123;</span><br><span class="line">    inserted () &#123;</span><br><span class="line">      <span class="comment">// 可以对 el 标签，扩展额外功能</span></span><br><span class="line">      el.<span class="title function_">focus</span>()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用指令<ul>
+<li>注意：在使用指令的时候，一定要先注册，再使用，否则会报错</li>
+<li>使用指令语法：<code>v-指令</code><ul>
+<li><code>&lt;input type=&quot;text&quot; v-focus/&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-指令中的配置项介绍"><a href="#4-指令中的配置项介绍" class="headerlink" title="4.指令中的配置项介绍"></a>4.指令中的配置项介绍</h4><p><code>inserted</code>：被绑定元素插入父节点时调用的钩子函数</p>
+<p><code>el</code>：使用指令的那个 DOM 元素</p>
+<h3 id="二、自定义指令-指令的值"><a href="#二、自定义指令-指令的值" class="headerlink" title="二、自定义指令-指令的值"></a>二、自定义指令-指令的值</h3><h4 id="1-需求"><a href="#1-需求" class="headerlink" title="1.需求"></a>1.需求</h4><p>实现一个color 指令-传入不同的颜色，给标签设置文字颜色</p>
+<h4 id="2-语法"><a href="#2-语法" class="headerlink" title="2.语法"></a>2.语法</h4><ol>
+<li><p>在绑定指令时，可以通过“等号”的形式为指令<strong>绑定</strong>具体的 canshuz</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-color</span>=<span class="string">&quot;color&quot;</span>&gt;</span>我是内容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过binding.value 可以拿到<strong>指令值</strong>，指令值修改会触发<strong>update 函数</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">directives</span>: &#123;</span><br><span class="line">  <span class="attr">color</span>: &#123;</span><br><span class="line">    inserted (el, binding) &#123;</span><br><span class="line">      el.<span class="property">style</span>.<span class="property">color</span> = binding.<span class="property">value</span></span><br><span class="line">    &#125;,</span><br><span class="line">     update (el, bingding) &#123;</span><br><span class="line">       el.<span class="property">style</span>.<span class="property">color</span> = binding.<span class="property">value</span></span><br><span class="line">     &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="3-代码示例"><a href="#3-代码示例" class="headerlink" title="3.代码示例"></a>3.代码示例</h4><p>App.vue</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-color</span>=<span class="string">&quot;color&quot;</span>&gt;</span>one<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-color</span>=<span class="string">&quot;&#x27;blue&#x27;&quot;</span>&gt;</span>two<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  data () &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">color</span>: <span class="string">&#x27;red&#x27;</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript">  <span class="attr">directives</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">color</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">      inserted (el, binding) &#123;</span></span><br><span class="line"><span class="language-javascript">        el.<span class="property">style</span>.<span class="property">color</span> = binding.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">      &#125;,</span></span><br><span class="line"><span class="language-javascript">      update (el, binding) &#123;</span></span><br><span class="line"><span class="language-javascript">        el.<span class="property">style</span>.<span class="property">color</span> = binding.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Keroro</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/08/11/Vue2-part8-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4/">http://example.com/2023/08/11/Vue2-part8-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Keroro's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Vue2/">Vue2</a></div><div class="post_share"><div class="social-share" data-image="/images/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/08/11/Vue2-part9-%E6%8F%92%E6%A7%BD/" title="Vue2-part9- 插槽"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Vue2-part9- 插槽</div></div></a></div><div class="next-post pull-right"><a href="/2023/08/11/Vue2-part7-%E5%8E%9F%E7%90%86/" title="Vue2-part7- 原理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Vue2-part7- 原理</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/08/08/Vue2-part1-%E6%8C%87%E4%BB%A4/" title="Vue2-part1-指令"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-08</div><div class="title">Vue2-part1-指令</div></div></a></div><div><a href="/2023/08/11/Vue2-part2-%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/" title="Vue2-part2-计算属性"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-11</div><div class="title">Vue2-part2-计算属性</div></div></a></div><div><a href="/2023/08/11/Vue2-part3-wathc%E4%BE%A6%E5%90%AC%E5%99%A8%EF%BC%88%E7%9B%91%E8%A7%86%E5%99%A8%EF%BC%89/" title="Vue2-part3-wathc侦听器（监视器）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-11</div><div class="title">Vue2-part3-wathc侦听器（监视器）</div></div></a></div><div><a href="/2023/08/11/Vue2-part4-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="Vue2-part4-生命周期"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-11</div><div class="title">Vue2-part4-生命周期</div></div></a></div><div><a href="/2023/08/11/Vue2-part5-%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%BC%80%E5%8F%91/" title="Vue2-part5-工程化开发"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-11</div><div class="title">Vue2-part5-工程化开发</div></div></a></div><div><a href="/2023/08/11/Vue2-part7-%E5%8E%9F%E7%90%86/" title="Vue2-part7- 原理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-11</div><div class="title">Vue2-part7- 原理</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Keroro</div><div class="author-info__description">:P</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/KeroroInu"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Σ(°ロ°) 这不会有人来的吧</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue2-part8-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">Vue2-part8-自定义指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4"><span class="toc-number">1.0.1.</span> <span class="toc-text">一、自定义指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%8C%87%E4%BB%A4%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">1.指令介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">2.自定义指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4%E8%AF%AD%E6%B3%95"><span class="toc-number">1.0.1.3.</span> <span class="toc-text">3.自定义指令语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%8C%87%E4%BB%A4%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE%E9%A1%B9%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.0.1.4.</span> <span class="toc-text">4.指令中的配置项介绍</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4-%E6%8C%87%E4%BB%A4%E7%9A%84%E5%80%BC"><span class="toc-number">1.0.2.</span> <span class="toc-text">二、自定义指令-指令的值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%9C%80%E6%B1%82"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">1.需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%AF%AD%E6%B3%95"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">2.语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.0.2.3.</span> <span class="toc-text">3.代码示例</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/11/Vue2-part10-%E8%B7%AF%E7%94%B1/" title="Vue2-part10-路由">Vue2-part10-路由</a><time datetime="2023-08-11T14:32:07.000Z" title="发表于 2023-08-11 22:32:07">2023-08-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/11/Vue2-part9-%E6%8F%92%E6%A7%BD/" title="Vue2-part9- 插槽">Vue2-part9- 插槽</a><time datetime="2023-08-11T14:31:56.000Z" title="发表于 2023-08-11 22:31:56">2023-08-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/11/Vue2-part8-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4/" title="Vue2-part8-自定义指令">Vue2-part8-自定义指令</a><time datetime="2023-08-11T14:31:43.000Z" title="发表于 2023-08-11 22:31:43">2023-08-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/11/Vue2-part7-%E5%8E%9F%E7%90%86/" title="Vue2-part7- 原理">Vue2-part7- 原理</a><time datetime="2023-08-11T14:31:19.000Z" title="发表于 2023-08-11 22:31:19">2023-08-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/11/Vue2-part6-%E7%BB%84%E4%BB%B6%E5%8C%96/" title="Vue2-part6-组件化">Vue2-part6-组件化</a><time datetime="2023-08-11T14:31:05.000Z" title="发表于 2023-08-11 22:31:05">2023-08-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Keroro</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div></div></body></html>
