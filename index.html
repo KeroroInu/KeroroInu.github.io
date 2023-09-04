@@ -56,7 +56,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-08-25 15:43:32'
+  postUpdate: '2023-09-04 11:24:31'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -160,230 +160,41 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/images/index_img.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Keroro's Blog"><span class="site-name">Keroro's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Keroro's Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/08/25/Vue3-part5-Vue3%E6%96%B0%E7%89%B9%E6%80%A7/" title="Vue3-part5-Vue3新特性">Vue3-part5-Vue3新特性</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-25T07:33:26.000Z" title="发表于 2023-08-25 15:33:26">2023-08-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">Vue3新特性Vue3.3 新特性-defineOptions背景说明：有 &lt;script setup&gt;之前，如果要定义 props, emits 可以轻而易举地添加一个与 setup 平级的属性。
-但是用了 &lt;script setup&gt; 后，就没法这么干了 setup 属性已经没有了，自然无法添加与其平级的属性。
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">34</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/images/index_img.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Keroro's Blog"><span class="site-name">Keroro's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Keroro's Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/04/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-%E5%B0%8F%E5%85%94%E9%B2%9C-sku-%E7%BB%84%E4%BB%B6%E6%8B%93%E5%B1%95/" title="前端项目-小兔鲜- sku 组件拓展">前端项目-小兔鲜- sku 组件拓展</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-04T03:09:26.000Z" title="发表于 2023-09-04 11:09:26">2023-09-04</time></span></div><div class="content">Sku组件封装1. 准备模版渲染规格数据
+使用Vite快速创建一个Vue项目，在项目中添加请求插件axios，然后新增一个SKU组件，在根组件中把它渲染出来，下面是规格内容的基础模板
 
-为了解决这一问题，引入了 defineProps 与 defineEmits 这两个宏。但这只解决了 props 与 emits 这两个属性。
-如果我们要定义组件的 name 或其他自定义的属性，还是得回到最原始的用法——再添加一个普通的 &lt;script&gt;标签。
-这样就会存在两个 &lt;script&gt;标签。让人无法接受。
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485&lt;script setup&gt;import &#123; onMounted, ref &#125; from &#x27;vue&#x27;import axios from &#x27;axios&#x27;// 商品数据const goods = ref(&#123;&#125;)const getGoods = async () =&gt; &#123;  // 1135076  初始化就有无库存的规格  // 1369155859933827074 更新之后有无库存项 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/04/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-%E5%B0%8F%E5%85%94%E9%B2%9C-%E4%BC%9A%E5%91%98%E4%B8%AD%E5%BF%83/" title="前端项目-小兔鲜-会员中心">前端项目-小兔鲜-会员中心</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-04T03:09:16.000Z" title="发表于 2023-09-04 11:09:16">2023-09-04</time></span></div><div class="content">路由配置1. 准备路由模版123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990&lt;script setup&gt; &lt;/script&gt;&lt;template&gt;  &lt;div class=&quot;container&quot;&gt;    &lt;div class=&quot;xtx-member-aside&quot;&gt;      &lt;div class=&quot;user-manage&quot;&gt;        &lt;h4&gt;我的账户&lt;/h4&gt;        &lt;div class=&quot;links&quot;&gt;          &lt;RouterLink to=&quot;/member/user&quo ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/04/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-%E5%B0%8F%E5%85%94%E9%B2%9C-%E6%94%AF%E4%BB%98%E9%A1%B5/" title="前端项目-小兔鲜-支付页">前端项目-小兔鲜-支付页</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-04T03:09:07.000Z" title="发表于 2023-09-04 11:09:07">2023-09-04</time></span></div><div class="content">基础数据渲染1. 准备接口1234567import request from &#x27;@/utils/http&#x27;export const getOrderAPI = (id) =&gt; &#123;  return request(&#123;    url: `/member/order/$&#123;id&#125;`  &#125;)&#125;
 
-所以在 Vue 3.3 中新引入了 defineOptions 宏。顾名思义，主要是用来定义 Options API 的选项。可以用defineOptions 定义任意的选项， props, emits, expose, slots 除外（因为这些可以使用 defineXXX 来做到）
-1234567&lt; ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/08/25/Vue3-part4-%E8%B7%A8%E5%B1%82%E4%BC%A0%E9%80%92/" title="Vue3-part4-跨层传递">Vue3-part4-跨层传递</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-25T07:31:26.000Z" title="发表于 2023-08-25 15:31:26">2023-08-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">Vue3 - 跨层传递组合式 API - proveid 和 inject作用和场景
-顶层组件向任意的底层组件传递数据和方法，实现夸层组件通信
+2. 获取数据渲染内容123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051&lt;script setup&gt;import &#123; getOrderAPI &#125; from &#x27;@/apis/pay&#x27;import &#123; onMounted, ref &#125; from &#x27;vue&#x27;import &#123; useRoute &#125; from &#x27;vue-router&#x27;// 获取订单数据const  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/04/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-%E5%B0%8F%E5%85%94%E9%B2%9C-%E8%AE%A2%E5%8D%95%E9%A1%B5/" title="前端项目-小兔鲜-订单页">前端项目-小兔鲜-订单页</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-04T03:09:01.000Z" title="发表于 2023-09-04 11:09:01">2023-09-04</time></span></div><div class="content">路由配置和基础数据渲染1. 准备组件模版123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183184185186187188189190191192193194195196 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/04/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-%E5%B0%8F%E5%85%94%E9%B2%9C-%E8%B4%AD%E7%89%A9%E8%BD%A6/" title="前端项目-小兔鲜-购物车">前端项目-小兔鲜-购物车</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-04T03:08:55.000Z" title="发表于 2023-09-04 11:08:55">2023-09-04</time></span></div><div class="content">本地购物车1. 添加购物车
+基础思想：如果已经添加过相同的商品，就在其数量count上加一，如果没有添加过，就直接push到购物车列表中
 
-跨层传递普通数据
-实现步骤
+1234567891011121314151617181920212223242526272829303132// 封装购物车模块import &#123; defineStore &#125; from &#x27;pinia&#x27;import &#123; ref &#125; from &#x27;vue&#x27;export const useCartStore = defineStore(&#x27;cart&#x27;, () =&gt; &#123;  // 1. 定义state - cartList  const cartList = ref([])  // 2. 定义action - addCart  const addCart = (goods) =&gt; &#123;    console.log(&#x27;添加&#x27;, goods)    // 添加购物车操作    // 已添加过 - count + 1  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/04/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-%E5%B0%8F%E5%85%94%E9%B2%9C-%E7%99%BB%E5%BD%95%E9%A1%B5/" title="前端项目-小兔鲜-登录页">前端项目-小兔鲜-登录页</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-04T03:08:49.000Z" title="发表于 2023-09-04 11:08:49">2023-09-04</time></span></div><div class="content">整体认识和路由配置1. 准备模版1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021031041051061071081091101111121131141151161171181191201211221231241251261271281291301311321331341351361371381391401411421431441451461471481491501511521531541551561571581591601611621631641651661671681691701711721731741751761771781791801811821831841851861871881891901911921931941951961971 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/04/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-%E5%B0%8F%E5%85%94%E9%B2%9C-%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85/" title="前端项目-小兔鲜-商品详情">前端项目-小兔鲜-商品详情</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-04T03:08:35.000Z" title="发表于 2023-09-04 11:08:35">2023-09-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE/">前端项目</a></span></div><div class="content">整体认识和路由配置1. 准备组件模版12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210310410510610710810911011111211311411511611711811912012112212312412512612712812913013113213313413513613713813914014114214314414514614714814915015115215315415515615715815916016116216316416516616716816917017117217317417517617717817918018118218318418518618718818919019119219319419519619 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/04/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-%E5%B0%8F%E5%85%94%E9%B2%9C-%E4%BA%8C%E7%BA%A7%E5%88%86%E7%B1%BB%E9%A1%B5/" title="前端项目-小兔鲜-二级分类页">前端项目-小兔鲜-二级分类页</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-04T03:08:19.000Z" title="发表于 2023-09-04 11:08:19">2023-09-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE/">前端项目</a></span></div><div class="content">整体业务认识和路由配置1. 准备组件模版12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788&lt;script setup&gt;&lt;/script&gt;&lt;template&gt;  &lt;div class=&quot;container &quot;&gt;    &lt;!-- 面包屑 --&gt;    &lt;div class=&quot;bread-container&quot;&gt;      &lt;el-breadcrumb separator=&quot;&gt;&quot;&gt;        &lt;el-breadcrumb-item :to=&quot;&#123; path: &#x27;/&#x27; &#125;&quot;&gt;首页&lt;/el-b ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/04/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-%E5%B0%8F%E5%85%94%E9%B2%9C-%E4%B8%80%E7%BA%A7%E5%88%86%E7%B1%BB%E9%A1%B5/" title="前端项目-小兔鲜-一级分类页">前端项目-小兔鲜-一级分类页</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-04T03:07:56.000Z" title="发表于 2023-09-04 11:07:56">2023-09-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE/">前端项目</a></span></div><div class="content">静态结构搭建和路由配置1. 准备分类组件123456789&lt;script setup&gt;&lt;/script&gt;&lt;template&gt;  &lt;div class=&#x27;top-category&#x27;&gt;    我是分类  &lt;/div&gt;&lt;/template&gt;
 
-顶层组件通过 provide 函数提供数据
-底层组建通过 inject 函数注入数据
+2. 配置路由12345678910111213141516171819202122232425262728293031323334import &#123; createRouter, createWebHashHistory &#125; from &#x27;vue-router&#x27;import Layout from &#x27;@/views/Layout/index.vue&#x27;import Home from &#x27;@/views/Home/index.vue&#x27;import Category from &#x27;@/views/Category/index.vue&#x27;const router = create ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/04/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-%E5%B0%8F%E5%85%94%E9%B2%9C-Home%E9%A1%B5/" title="前端项目-小兔鲜-Home页">前端项目-小兔鲜-Home页</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-04T02:53:43.000Z" title="发表于 2023-09-04 10:53:43">2023-09-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE/">前端项目</a></span></div><div class="content">静态结构搭建和分类实现1. 整体结构创建
+左侧分类和轮播图
+新鲜好物
+人气推荐
+产品列表
 
+1- 按照结构新增五个组件，准备最简单的模版，分别在Home模块的入口组件中引入
 
-1234// 顶层组件provide(&#x27;key&#x27;, 顶层组件中的数据)// 底层组件const message = inject(&#x27;key&#x27;)
+HomeCategory
+HomeBanner
+HomeNew
+HomeHot
+HomeProduct
 
-跨层传递响应式数据
-在调用 provide 函数时，第二个参数设置为 ref 对象
+123456&lt;script setup&gt;&lt;/script&gt;&lt;template&gt;  &lt;div&gt; HomeCategory &lt;/div&gt;&lt;/template&gt;
 
-1234// 顶层组件provide(&#x27;app-key&#x27;, ref对象)// 底层组件const message = inject(&#x27;app-key&#x27;)
-
-夸层传递方法
-顶层组件可以向底层组件传递方法，底层组件调用方法修改顶层组件的数据
-
-1234567// 顶层组件const setCount = () =&gt; &#123;  count.value++&#125;provide(&#x27;setCount-k ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/08/25/Vue3-part3-%E7%BB%84%E5%90%88%E5%BC%8F-API%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="Vue3-part3-组合式 API生命周期">Vue3-part3-组合式 API生命周期</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-25T07:26:30.000Z" title="发表于 2023-08-25 15:26:30">2023-08-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">Vue3 生命周期函数组合式 API - 生命周期函数选项式对比组合式
-
-
-选项式API
-组合式 API
-
-
-
-beforeCreate&#x2F;created
-setup
-
-
-beforeMount
-onBeforeMount
-
-
-mounted
-onMounted
-
-
-beforeUpdate
-onBeforeUpdate
-
-
-updated
-OnUpdated
-
-
-beforeUnmount
-onBeforeUnmount
-
-
-unmounted
-onUnmounted
-
-
-生命周期函数基本使用
-导入生命周期函数执行生命周期函数，传入回调
-
-123456&lt;scirpt setup&gt;import &#123; onMounted &#125; from &#x27;vue&#x27;onMounted(()=&gt;&#123;  // 自定义逻辑&#125;)&lt;/script&gt;
-
-执行多次
-生命周期函数执行多次的时候，会按照顺序依次执行
-
-12345678910&lt;scirpt setup&gt;import &#123; onMounted &#1 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/08/25/Vue3-part2-%E7%BB%84%E5%90%88%E5%BC%8F-API/" title="Vue3-part2-组合式 API">Vue3-part2-组合式 API</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-25T07:23:03.000Z" title="发表于 2023-08-25 15:23:03">2023-08-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">Vue3 - 组合式 API1.组合式 API - setup 选项1.1setup 选项的写法和执行时机12345678910&lt;script&gt;  export default &#123;    setup()&#123;    &#125;,    beforeCreate()&#123;    &#125;  &#125;&lt;/script&gt;
-
-执行时机：
-
-在 beforeCreate 钩子之前执行
-
-1.2setup 中写代码的特点
-在 setup 函数中的写的数据和方法需要在末尾以对象的方式 return，才能给模板
-
-123456789101112131415&lt;script&gt;  export default &#123;    setup()&#123;      const message = &#x27;this is message&#x27;      const logMessage = ()=&gt;&#123;        console.log(message)      &#125;      // 必须return才 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/08/25/Vue3-part1-%E8%AE%A4%E8%AF%86Vue3/" title="Vue3-part1-认识Vue3">Vue3-part1-认识Vue3</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-25T06:48:00.000Z" title="发表于 2023-08-25 14:48:00">2023-08-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">认识Vue31.Vue2 与 Vue3选项式和组合式
-
-Vue2:
-
-1234567891011121314&lt;script&gt;export default &#123;  data()&#123;    return &#123;      count:0    &#125;  &#125;,  methods:&#123;    addCount()&#123;      this.count++    &#125;  &#125;&#125;&lt;/script&gt;
-
-
-Vue3:
-
-12345&lt;script setup&gt;import &#123; ref &#125; from &#x27;vue&#x27;const count = ref(0)const addCount = ()=&gt; count.value++&lt;/script&gt;
-
-
-特点：
- 1. 代码量变少
- 2. 分散式维护变成集中式维护
-
-
-
-Vue3的优势
-
-更易维护
-组合式API
-更好的TypeScript支持
-
-
-更小的体积
-良好的TreeShaking
-按需引入
- ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/08/18/Vue2-part14-Vuex/" title="Vue2-part14-Vuex">Vue2-part14-Vuex</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-18T06:55:26.000Z" title="发表于 2023-08-18 14:55:26">2023-08-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">Vue2-part14-Vuex一、Vuex 概述1.Vuex 是什么Vuex 是一个 Vue 的状态管理工具，状态就是数据
-
-大白话：Vuex 是一个插件，可以帮我们管理 Vue 通用的数据（多组件共享的数据）例如：购物车数据 个人信息数据
-
-2.使用场景
-某个状态 在 很多个组件 来使用（个人信息）
-多个嘴贱 共同维护 一份数据（购物车）
-
-3.优势
-共同维护同一份数据，数据集中化管理
-响应式变化
-操作简介（vuex 提供了一些辅助函数）
-
-4.注意：官方原文：
-
-不是所有的场景都适用于 vuex，只有在必要的时候才使用 vuex
-使用了 vuex 之后，会附加更多的框架中的概念进来，增加了项目的复杂度（数据的操作更便捷，数据的流动更清晰）
-
-
-Vuex就像《近视眼镜》，你自然会知道什么时候需要用它
-
-
-二、vuex 的使用 - 创建仓库
-
-安装 vuex
-新建 vuex 模块文件
-创建仓库
-main.js 导入挂载
-
-
-1.安装 vuex安装 vuex 与 vue-router 类似，vuex 是一个独立存在的插件，如果脚手架初始化没有选 vuex，就有需要额外安装
-1yarn  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/08/18/Vue2-part13-ESLint-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E5%8F%8A%E6%89%8B%E5%8A%A8%E4%BF%AE%E5%A4%8D/" title="Vue2-part13-ESLint 代码规范及手动修复">Vue2-part13-ESLint 代码规范及手动修复</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-18T06:55:15.000Z" title="发表于 2023-08-18 14:55:15">2023-08-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">Vue-part13-ESLint 代码规范及手动修复
-代码规范：一套写代码的约定规则。例如：负值符号的左右是否需要空格？一句结束是否要加；
-
-ESlint:是一个代码检查工具，用来检查你的代码是否符合指定的规则（你和你的团队可以自行约定一套规则）。在创建项目时，我们使用的是 JavaScript Standard Style 代码风格的规则
-一、ESLint 代码规范1.JavaScript Standard Style 规范说明建议把：https://standardjs.com/rules-zhcn.html 看一遍，然后在写的时候，遇到错误就查询解决
-下面是这份规则中的一小部分：
-
-字符串使用单引号 -  需要转义的地方除外
-
-无分号
-
-关键字后加空格 if(condition) &#123;...&#125;
-
-函数名后加空格 function name (arg) &#123; ... &#125;
-
-坚持使用全等 === 摒弃 == 一旦需要检查 null || undefined时可以使用 obj == null
-
-……
-
-
-2.代码错误规范如果你的代码不符合 stan ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/08/18/Vue2-part12-VueCli-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/" title="Vue2-part12-VueCli 自定义创建项目">Vue2-part12-VueCli 自定义创建项目</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-18T06:54:58.000Z" title="发表于 2023-08-18 14:54:58">2023-08-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">Vue2-part12-VueCli 自定义创建项目1.安装脚手架1npm i @vue/cli -g
-
-2.创建项目1vue create 项目名称
-
-
-选项
-
-12345Vue CLI v5.0.8? Please pick a preset:  Default ([Vue 3] babel, eslint)  Default ([Vue 2] babel, eslint)&gt; Manually select features     选自定义
-
-
-需求选择(选项)
-
-123456789Babel // es6 转 es3 语法降级TypeScriptProgressive Web App (PWA) SupportRouter // VueRouter 路由Vuex // Vuex 容器CSS Pre-processors	// less/scssLinter / Formatter // eslint 校验代码格式Unit Testing E2E Testing
-
-
-选择 vue 的版本
-
-12	3.x&gt; 2.x
-
-
-是否使用 history 模式
-
-选择 css 预 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/08/18/Vue2-part11-%E7%BC%93%E5%AD%98%E7%BB%84%E4%BB%B6/" title="Vue2-part11-缓存组件">Vue2-part11-缓存组件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-18T06:54:14.000Z" title="发表于 2023-08-18 14:54:14">2023-08-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">Vue2-part11-缓存组件一、缓存组件
-从页面详情页转回列表，数据重新加载了 &#x3D;&gt; 希望回到原来的位置
-
-1.原因当路由被跳转后，原来所看到的组件就被销毁了（会执行组件内的 beforeDestory 和 destoryed 生命周期钩子），重新返回后组件又被重新创建了（会执行组件内的 beforeCreate，created，beforeMount，Mounted 生命周期钩子），所以数据被加载了
-2.解决方案利用 keep-alive 把原来的组件给缓存下来
-3.什么是 keep-alivekeep-alive是一个抽象组件：它自身不会渲染成一个 DOM 元素，也不会出现在父组件中
-优点：在组件切换过程中把切换出去的组件保留在内存中，防止重复渲染 DOM，减少加载时间机性能消耗，提高用户体验性
-App.Vue
-1234567&lt;template&gt;  &lt;div class=&quot;h5-wrapper&quot;&gt;    &lt;keep-alive&gt;    	&lt;router-view&gt;&lt;/router-view ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/08/11/Vue2-part10-%E8%B7%AF%E7%94%B1/" title="Vue2-part10-路由">Vue2-part10-路由</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-11T14:32:07.000Z" title="发表于 2023-08-11 22:32:07">2023-08-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">Vue2-part2-路由一. 单页应用程序1.单页面介绍单页面应用程序，之所以开发效率好，性能好，用户体验好，最大原因就是：页面按需更新
-
-按需更新，首先就需要明确：访问路径和组件的对应关系
-这两者关系的确定就是通过：路由
-
-2.路由介绍
-生活中的路由 ：设备和ip的映射关系
-Vue 中的路由：路径和组件的映射关系
-
-
-二、路由的基本使用
-通过使用 VueRouter（Vue 官方的一个路由插件，是一个第三方包），从海实现修改地址栏路径时，切换显示匹配的组件
-VueRouter官网
-
-1.VueRouter 的使用（5+2）5 个固定的步骤（不用死背，熟能生巧）
-1.下载 VueRouter 模块到当前工程，例如版本 3.6.5
-
-Vue2 配合 VueRouter3.x Vuex 3.x （233）
-Vue3 配合 VueRouter4.x Vuex 4.x （344）
-
-1yarn add vue-router@3.6.5
-
-2.main.js中引入 VueRouter
-1import VueRouter from &#x27;vue-router&#x27;
-
-3.安装注册
-1 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Keroro</div><div class="author-info__description">:P</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/KeroroInu"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Σ(°ロ°) 这不会有人来的吧</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/25/Vue3-part5-Vue3%E6%96%B0%E7%89%B9%E6%80%A7/" title="Vue3-part5-Vue3新特性">Vue3-part5-Vue3新特性</a><time datetime="2023-08-25T07:33:26.000Z" title="发表于 2023-08-25 15:33:26">2023-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/25/Vue3-part4-%E8%B7%A8%E5%B1%82%E4%BC%A0%E9%80%92/" title="Vue3-part4-跨层传递">Vue3-part4-跨层传递</a><time datetime="2023-08-25T07:31:26.000Z" title="发表于 2023-08-25 15:31:26">2023-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/25/Vue3-part3-%E7%BB%84%E5%90%88%E5%BC%8F-API%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="Vue3-part3-组合式 API生命周期">Vue3-part3-组合式 API生命周期</a><time datetime="2023-08-25T07:26:30.000Z" title="发表于 2023-08-25 15:26:30">2023-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/25/Vue3-part2-%E7%BB%84%E5%90%88%E5%BC%8F-API/" title="Vue3-part2-组合式 API">Vue3-part2-组合式 API</a><time datetime="2023-08-25T07:23:03.000Z" title="发表于 2023-08-25 15:23:03">2023-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/25/Vue3-part1-%E8%AE%A4%E8%AF%86Vue3/" title="Vue3-part1-认识Vue3">Vue3-part1-认识Vue3</a><time datetime="2023-08-25T06:48:00.000Z" title="发表于 2023-08-25 14:48:00">2023-08-25</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+2- Home模块入口组件中引入并渲染
+1234567891011121314151617&lt;script setup&gt;import HomeCategory from &#x27;./components/HomeCategory.vue&#x27;import HomeBanner from &#x27;./components/HomeBanner.vue&#x27;import HomeNew from &#x27;./components/HomeNew.vue& ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Keroro</div><div class="author-info__description">:P</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">34</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/KeroroInu"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Σ(°ロ°) 这不会有人来的吧</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/04/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-%E5%B0%8F%E5%85%94%E9%B2%9C-sku-%E7%BB%84%E4%BB%B6%E6%8B%93%E5%B1%95/" title="前端项目-小兔鲜- sku 组件拓展">前端项目-小兔鲜- sku 组件拓展</a><time datetime="2023-09-04T03:09:26.000Z" title="发表于 2023-09-04 11:09:26">2023-09-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/04/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-%E5%B0%8F%E5%85%94%E9%B2%9C-%E4%BC%9A%E5%91%98%E4%B8%AD%E5%BF%83/" title="前端项目-小兔鲜-会员中心">前端项目-小兔鲜-会员中心</a><time datetime="2023-09-04T03:09:16.000Z" title="发表于 2023-09-04 11:09:16">2023-09-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/04/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-%E5%B0%8F%E5%85%94%E9%B2%9C-%E6%94%AF%E4%BB%98%E9%A1%B5/" title="前端项目-小兔鲜-支付页">前端项目-小兔鲜-支付页</a><time datetime="2023-09-04T03:09:07.000Z" title="发表于 2023-09-04 11:09:07">2023-09-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/04/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-%E5%B0%8F%E5%85%94%E9%B2%9C-%E8%AE%A2%E5%8D%95%E9%A1%B5/" title="前端项目-小兔鲜-订单页">前端项目-小兔鲜-订单页</a><time datetime="2023-09-04T03:09:01.000Z" title="发表于 2023-09-04 11:09:01">2023-09-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/04/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-%E5%B0%8F%E5%85%94%E9%B2%9C-%E8%B4%AD%E7%89%A9%E8%BD%A6/" title="前端项目-小兔鲜-购物车">前端项目-小兔鲜-购物车</a><time datetime="2023-09-04T03:08:55.000Z" title="发表于 2023-09-04 11:08:55">2023-09-04</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             
             </div>
             <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="card-category-list-name">前端</span><span class="card-category-list-count">19</span></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Vue3/" style="font-size: 1.1em; color: #999">Vue3</a> <a href="/tags/Vue2/" style="font-size: 1.5em; color: #99a9bf">Vue2</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><span class="card-archive-list-count">20</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">20</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2023-08-25T07:43:32.723Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">22.5k</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-08-25T07:43:32.731Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/images/index_img.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Keroro</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="card-category-list-name">前端</span><span class="card-category-list-count">19</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE/"><span class="card-category-list-name">前端项目</span><span class="card-category-list-count">8</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Vue3/" style="font-size: 1.1em; color: #999">Vue3</a> <a href="/tags/Vue2/" style="font-size: 1.5em; color: #99a9bf">Vue2</a> <a href="/tags/Vue3%E9%A1%B9%E7%9B%AE/" style="font-size: 1.5em; color: #99a9bf">Vue3项目</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><span class="card-archive-list-count">14</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><span class="card-archive-list-count">20</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">34</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2023-09-04T03:24:31.337Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">53.9k</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-09-04T03:24:31.355Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/images/index_img.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Keroro</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
   init: (str) => {
     window.typed = new Typed('#subtitle', Object.assign({
       strings: str,
